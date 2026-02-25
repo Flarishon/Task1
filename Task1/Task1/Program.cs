@@ -1,33 +1,9 @@
 ﻿namespace Task1
 {
-    internal class Program
+    public class Logic
     {
-        static void Main(string[] args)
+        public static string WordForms(int number)
         {
-            int number;
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Введите число от 1 до 9999: ");
-                    number = int.Parse(Console.ReadLine());
-
-                    if (number < 1 || number > 9999)
-                    {
-                        throw new ArgumentOutOfRangeException("", "Ошибка: Число должно быть в диапазоне от 1 до 9999 включительно!\n");
-                    }
-
-                    break;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Ошибка: Введено не целое число!\n");
-                }
-                catch (ArgumentOutOfRangeException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            }
 
             int rubles;
             int copeiki;
@@ -76,7 +52,40 @@
             {
                 result = rubles + rubles_word + " ровно";
             }
-            Console.WriteLine(result);
+
+            return result;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Введите число от 1 до 9999: ");
+                    number = int.Parse(Console.ReadLine());
+
+                    if (number < 1 || number > 9999)
+                    {
+                        throw new ArgumentOutOfRangeException("", "Ошибка: Число должно быть в диапазоне от 1 до 9999 включительно!\n");
+                    }
+
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ошибка: Введено не целое число!\n");
+                }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            string answer = Logic.WordForms(number);
+            Console.WriteLine(answer);
         }
     }
 }
