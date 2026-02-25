@@ -14,19 +14,6 @@
             rubles = number / 100;
             copeiki = number % 100;
 
-            if (copeiki % 10 == 1 && copeiki != 11)
-            {
-                copeiki_word = " копейка";
-            }
-            else if ((copeiki % 10 >= 2 && copeiki % 10 <= 4) && !(copeiki >= 12 && copeiki <= 14))
-            {
-                copeiki_word = " копейки";
-            }
-            else
-            {
-                copeiki_word = " копеек";
-            }
-
             if (rubles % 10 == 1 && rubles != 11)
             {
                 rubles_word = " рубль";
@@ -38,6 +25,19 @@
             else
             {
                 rubles_word = " рублей";
+            }
+
+            if (copeiki % 10 == 1 && copeiki != 11)
+            {
+                copeiki_word = " копейка";
+            }
+            else if ((copeiki % 10 >= 2 && copeiki % 10 <= 4) && !(copeiki >= 12 && copeiki <= 14))
+            {
+                copeiki_word = " копейки";
+            }
+            else
+            {
+                copeiki_word = " копеек";
             }
 
             if (rubles == 0)
